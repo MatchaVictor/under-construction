@@ -31,8 +31,8 @@ const lastfmTracksDiv = document.getElementById('lastfm-tracks');
 const lastfmInstructions = document.getElementById('lastfm-instructions');
 
 async function fetchRecentTracks() {
-    if (LASTFM_API_KEY === 'e202c9338b973637d90aabeab40df07f' || LASTFM_USERNAME === 'Victorflxres') {
-        // Show instructions if API key/username not set
+    // Only show instructions if the placeholders are still present
+    if (LASTFM_API_KEY === 'YOUR_LASTFM_API_KEY' || LASTFM_USERNAME === 'YOUR_LASTFM_USERNAME') {
         lastfmInstructions.style.display = 'block';
         lastfmTracksDiv.innerHTML = '';
         return;
