@@ -1,0 +1,6 @@
+[build]
+  functions = "functions"
+  publish = "public" # Create a public folder for your website files.
+
+[dev]
+  functions = "functions"
