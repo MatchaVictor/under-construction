@@ -1,0 +1,209 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #181a20;
+    color: #f5f5f7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    position: relative;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+/* Hamburger Menu Styles */
+#hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    z-index: 1001;
+}
+#hamburger .bar {
+    width: 28px;
+    height: 4px;
+    background: #f5f5f7;
+    margin: 3px 0;
+    border-radius: 2px;
+    transition: 0.4s;
+}
+
+/* Side Menu Styles */
+#side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100vh;
+    background: #23262f;
+    box-shadow: 2px 0 12px rgba(0,0,0,0.2);
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(.77,0,.18,1);
+    z-index: 1000;
+    padding-top: 60px;
+}
+#side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#side-menu li {
+    margin: 1.5rem 0;
+    text-align: left;
+}
+#side-menu a {
+    color: #f5f5f7;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem 1.5rem;
+    display: block;
+    transition: background 0.2s;
+}
+#side-menu a:hover {
+    background: #2d313a;
+    border-radius: 4px;
+}
+#side-menu.show {
+    transform: translateX(0);
+}
+#side-menu.hidden {
+    transform: translateX(-100%);
+}
+
+/* Hamburger Animation (X) */
+#hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+#hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+#hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Main Content Styles */
+main {
+    flex: 1 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+}
+#lastfm {
+    background: rgba(35,38,47,0.95);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+    padding: 2rem 2.5rem;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+#lastfm h1 {
+    margin-top: 0;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+#lastfm-tracks {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+.lastfm-track {
+    display: flex;
+    align-items: center;
+    background: #23262f;
+    border-radius: 8px;
+    padding: 0.7rem 1rem;
+    gap: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.lastfm-track img {
+    width: 56px;
+    height: 56px;
+    border-radius: 6px;
+    object-fit: cover;
+    background: #1a1c22;
+}
+.lastfm-track-info {
+    flex: 1;
+    text-align: left;
+}
+.lastfm-track-title {
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 0.2rem;
+}
+.lastfm-track-artist {
+    font-size: 0.95rem;
+    color: #b0b3bb;
+}
+.lastfm-track-album {
+    font-size: 0.85rem;
+    color: #7a7d87;
+}
+
+#lastfm-instructions {
+    margin-top: 1.5rem;
+    color: #b0b3bb;
+    font-size: 0.95rem;
+}
+
+/* Footer Social Icons */
+footer {
+    width: 100%;
+    padding: 1.2rem 0 0.7rem 0;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.social-icons {
+    display: flex;
+    gap: 2.2rem;
+}
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #23262f;
+    transition: background 0.2s, transform 0.2s;
+}
+.social-icons a:hover {
+    background: #2d313a;
+    transform: scale(1.08);
+}
+.social-icons img {
+    width: 22px;
+    height: 22px;
+    filter: invert(90%) sepia(10%) saturate(200%) hue-rotate(180deg);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    #lastfm {
+        padding: 1.2rem 0.5rem;
+        max-width: 98vw;
+    }
+    .social-icons {
+        gap: 1.2rem;
+    }
+    #side-menu {
+        width: 80vw;
+        min-width: 180px;
+    }
+}
