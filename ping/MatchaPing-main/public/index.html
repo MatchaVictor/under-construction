@@ -177,7 +177,7 @@
 <body>
     <!-- Hamburger Menu -->
     <header>
-        <button id="hamburger" aria-label="Open navigation menu">
+        <button id="hamburger" aria-label="Open navigation menu" onclick="window.location.href='https://matchaleaves.us/ping'">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
@@ -220,22 +220,6 @@
     </div>
 
     <script>
-        // Hamburger menu functionality
-        const hamburger = document.getElementById('hamburger');
-        const sideMenu = document.getElementById('side-menu');
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            sideMenu.classList.toggle('show');
-            sideMenu.classList.toggle('hidden');
-        });
-        document.addEventListener('click', (e) => {
-            if (!sideMenu.contains(e.target) && !hamburger.contains(e.target)) {
-                hamburger.classList.remove('active');
-                sideMenu.classList.remove('show');
-                sideMenu.classList.add('hidden');
-            }
-        });
-
         // Cloudflare Turnstile integration
         let turnstileToken = '';
         window.turnstileCallback = function(token) {
